@@ -1,10 +1,16 @@
 body {
 	background-image: url(../images/background.jpg);
 }
-
-.whiteOverlay {
-	width: 1500px;
-	height: 700px;
-	background-color: white;
-	opacity: 0.6;
+.content_stats {
+	width: 1050px;
+	height: 650px;
+	position: absolute;
+	top: 50px;
+	left: 250px;
+}
+.grassOverlay {
+	width: 1000px;
+	height: 600px;
+	background-color: #54A0D6;
+	opacity: 0.5;
 }
