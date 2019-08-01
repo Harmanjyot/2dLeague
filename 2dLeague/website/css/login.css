@@ -1,0 +1,41 @@
+body {
+    background-image: url("../images/background.jpg");
+}
+
+.container{
+    height: 420px;
+    width: 420px;
+    text-align: center; 
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#grad {
+    background-image: linear-gradient(-90deg, red, yellow);
+  }
+.row{
+    text-align: center;
+    
+}
+input[type=text],input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  button{
+      background-color: darkgray;
+      font-size: large;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      border-radius: 5px;
+      
+  }
+  
+  button:hover {
+      box-shadow: 5px 5px 10px grey;
+  }
