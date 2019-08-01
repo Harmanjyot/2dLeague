@@ -9,8 +9,9 @@
     </style>
 </head>
 <body>
-
-<canvas id="myCanvas" width="1000" height="500"></canvas>
+<br>
+<br>	
+<canvas id="myCanvas" width="1000" height="500" style="background: url('grass2.png')"></canvas>
 
 <script>
 	// JavaScript code goes here
@@ -30,10 +31,11 @@
 	ctx.stroke();
 
 	var background = new Image();
-	background.src = "grass.png";
+	background.src = "grass2.png";
 
 	background.onload = function(){
     ctx.drawImage(background,10,10); 
+	}
 </script>
 
 </body>
