@@ -7,7 +7,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/reg.css'>
-    <script src='main.js'></script>
+    
     <script> 
           
         // Function to check Whether both passwords 
