@@ -25,7 +25,7 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <a href="../website/reg.html" style="color:white" class="btn">Sign up</a>
+                          <a href="signupPage.php" style="color:white" class="btn">Sign up</a>
                         </div>
                         <div class="col">
                           <a href="#" style="color:white" class="btn">Forgot password ?</a>

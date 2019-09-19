@@ -25,7 +25,7 @@
 </head>
 <body>
         <div class="container">
-                <form action="/action_page.php" method="POST">
+                <form action="misc/action_signup.php" method="POST">
                   <h1>2D League</h1>
                   <div  id="grad">
                      
@@ -42,13 +42,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                        
+                          <a href="loginPage.php" style="color:white" class="btn">Login</a>
                         </div>
                       </div>
                     </div>
                   </div>
               
-                  </div>
                 </form>
               </div>
               
