@@ -5,10 +5,10 @@ $dbuser = $duser;
 $dbpass = $dpass;
 $dbhost = $dhost;
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if ($conn) {
-	echo "success";
-}
-else {
-	echo "fail";
-}
+// if ($conn) {
+// 	echo "success";
+// }
+// else {
+// 	echo "fail";
+// }
  ?>

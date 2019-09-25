@@ -24,6 +24,8 @@ font-size: 72px;
     padding-top: 20px; 
     padding:60px 400px;
     position: relative; 
+    margin:0 auto;
+    max-width:500px;
     
 }
 a{
@@ -36,8 +38,8 @@ a{
         padding: 8px 16px;
         margin: 10px;
         border-radius: 40px;
-        height: 320px;
-        width: 480px;
+        height: 50%;
+        width: 35%;
   }
 .row{
     text-align: center;
@@ -69,3 +71,5 @@ transition: background-color 200ms ease-in-out,
      background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
 
 }
+@media only screen and (min-width:700px) and (max-width:995px)
+{}
