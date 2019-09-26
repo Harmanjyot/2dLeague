@@ -33,8 +33,8 @@
                       <input type="email" name="email" placeholder="Email" required>
                       <input type="text" name="username" placeholder="Username" required>
                       <!-- I ADDED NAME="PASSWORD1" ON THE LINE BELOW, NOTHING HAPPENED. SOME ERROR ON LINE 8 OF SIGNUP.PHP -->
-                      <input type="password" id="password1" name="password1" placeholder="Password" required>
-                      <input type="password" id="password2" placeholder="Confirm Password" required>
+                      <input type="password" id="password1" name="pwd" placeholder="Password" required>
+                      <input type="password" id="password2" name="pwd" placeholder="Confirm Password" required>
 
                       <br>
                       <centre><button type="submit" name="Login" onclick="return Validate()">SIGN UP</button></centre>

@@ -5,7 +5,7 @@ require "../php/conn.php";
 
 $name = mysqli_escape_string($conn, $_POST["username"]);
 $email = mysqli_escape_string($conn, $_POST["email"]);
-$pass = mysqli_escape_string($conn, $_POST["password"]);
+$pass = mysqli_escape_string($conn, $_POST["pwd"]);
 
 $query = "SELECT * FROM playerDetails WHERE userName = '$name' OR emailID = '$email'";
 $result = mysqli_query($conn, $query);
@@ -20,6 +20,7 @@ else
     $subject = "2D League";
 	$message = "<a href = 'http://localhost/2dLeague/2dLeague/2dLeague/website/loginPage.php?vkey=$vkey>Register Account</a>";
 	$headers = "From: 2dleagueofficial@gmail.com";
+	$headers .= "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
 
     if( mail($email, $subject, $message, $headers) )
