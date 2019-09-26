@@ -3,6 +3,7 @@
 
 
 function setup () {
+                //x,  y
     createCanvas(1200,500);
     oct = new Octane(50,50,50);
     ball = new Ball(525,237.5,30);
@@ -18,11 +19,12 @@ function draw() {
 
     // background(0);
     ball.show();
-    oct.show();
-    ball.touch();
+    ball.bounce();
+    //oct.show();
+    //ball.touch();
 
-    oct.update();
-    ball.update();
+    //oct.update();
+    //ball.update();
 
     // oct2.show();
     // oct2.update();
