@@ -32,7 +32,8 @@
                     <h2 style="text-align:center">SIGN UP</h2>
                       <input type="email" name="email" placeholder="Email" required>
                       <input type="text" name="username" placeholder="Username" required>
-                      <input type="password" id="password1" placeholder="Password" required>
+                      <!-- I ADDED NAME="PASSWORD1" ON THE LINE BELOW, NOTHING HAPPENED. SOME ERROR ON LINE 8 OF SIGNUP.PHP -->
+                      <input type="password" id="password1" name="password1" placeholder="Password" required>
                       <input type="password" id="password2" placeholder="Confirm Password" required>
 
                       <br>
