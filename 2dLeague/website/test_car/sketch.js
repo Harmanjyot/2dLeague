@@ -4,26 +4,32 @@
 
 function setup () {
                 //x,  y
-    createCanvas(1200,500);
+    var cnv = createCanvas(1200,600);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
+
+
     oct = new Octane(50,50,50);
-    ball = new Ball(525,237.5,30);
+    ball = new Ball(600,300,30);
     // oct2 = new Octane(100,100,50);
 
 
 }
 
 function draw() {
-    rect(25,25,1000,450);
-    line(525,25,525,475);
+    rect(0,0,1200,600);
+    line(600,0,600,600);
     background('rgba(0,255,0, 0.25)');
 
     // background(0);
     ball.show();
     ball.bounce();
-    //oct.show();
+    oct.show();
     //ball.touch();
 
-    //oct.update();
+    oct.update();
+    oct.bounds();
     //ball.update();
 
     // oct2.show();
