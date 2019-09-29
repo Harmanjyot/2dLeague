@@ -2,25 +2,36 @@ function Ball(x,y,r) {
     this.pos = createVector(x,y);
     this.r = r;
     this.vel = createVector(0,0);
+    var ballspeed = 0;
+    var ballx,bally=0;
 
-    var ballx = 525;
-    var bally = 237.5;
-    var heighty = 495;
-    var widthx = 1195;
-    var balldirectionx = 1;
-    var balldirectiony = 1;
-    var ballspeed = 3;
 
-    // this.update = function () {
+
+    this.update = function () {
+        if (this.pos.x < 0) {
+            ballx = ballx + (balldirectionx * ballspeed);
+          }
+      
+          if (this.pos.y < 0) {
+            this.pos.y = this.pos.y * -1;
+          }
+          //define upper bounds for x and y. do this and basic physics are done for ball too. just defining touch and imapct is left.
+          if (this.pos.x + 60 > width) {
+            this.pos.x = width - 60;
+      
+          }
+      
+          if (this.pos.y + 60 > height) {                            //1210  =  1210 -2*1210%1200 ==1210 - 20 == 1190
+            this.pos.y = height - 60;
+          
+          }
         
-    //     var newvel = createVector(0,0);
-    //     this.pos.add(this.vel);
 
-    // }
 
-    this.bounce = function () {
-        ballx = ballx + (balldirectionx * ballspeed);
-        bally = bally + (balldirectiony * ballspeed);
+    }
+    
+        // ballx = ballx + (balldirectionx * ballspeed);
+        // bally = bally + (balldirectiony * ballspeed);
 
         if (ballx < 0) {
             balldirectionx = balldirectionx*-1;
@@ -34,25 +45,7 @@ function Ball(x,y,r) {
         if (ballx > widthx) {
             balldirectionx = balldirectionx*-1;
         }
-
-
-    }
-
-
-    this.touch = function(other) {
-        var d = p5.Vector.dist(this.pos, other.pos);
-        if ( d < this.r + other.r) {
-            newvel.setMag(other.mag());
-            this.vel.lerp(newvel, 0, 0.2);
-
-            return true;
-        }
-        else {
-            return false;
-        }
-
         
-    }
 
 
     this.show = function() {
