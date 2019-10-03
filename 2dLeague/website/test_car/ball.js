@@ -3,7 +3,7 @@ function Ball(x,y,r) {
     this.r = r;
     this.vel = createVector(0,0);
     var ballspeed = 0;
-    var ballx,bally=0;
+    var ballx,bally=500;
 
 
 
@@ -33,18 +33,18 @@ function Ball(x,y,r) {
         // ballx = ballx + (balldirectionx * ballspeed);
         // bally = bally + (balldirectiony * ballspeed);
 
-        if (ballx < 0) {
-            balldirectionx = balldirectionx*-1;
-        }
-        if (bally < 0) {
-            balldirectiony = balldirectiony*-1;
-        }
-        if (bally > heighty) {
-            balldirectiony = balldirectiony*-1;
-        }
-        if (ballx > widthx) {
-            balldirectionx = balldirectionx*-1;
-        }
+        // if (ballx < 0) {
+        //     balldirectionx = balldirectionx*-1;
+        // }
+        // if (bally < 0) {
+        //     balldirectiony = balldirectiony*-1;
+        // }
+        // if (bally > heighty) {
+        //     balldirectiony = balldirectiony*-1;
+        // }
+        // if (ballx > widthx) {
+        //     balldirectionx = balldirectionx*-1;
+        // }
         
 
 
