@@ -23,13 +23,13 @@ function draw() {
     background('rgba(0,255,0, 0.25)');
 
     // background(0);
-    ball.show();
-    //oct.show();
+    //ball.show();
+    oct.show();
     //ball.touch();
     //oct.bounds();
-    //oct.update();
+    oct.update();
     
-    ball.update();
+    //ball.update();
 
     // oct2.show();
     // oct2.update();
