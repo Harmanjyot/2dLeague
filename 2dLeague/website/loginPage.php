@@ -17,10 +17,22 @@ require "php/conn.php";
     $result = $stmt->get_result();
     $row = mysqli_fetch_array($result);
 
-    $sql = "INSERT INTO playerdetails(userName, emailID, Password) VALUES(?,?,?)";
+    $sql = "INSERT INTO playerdetails(userID, userName, emailID, Password) VALUES(?,?,?,?)";
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt,"sss", $row["userName"], $row["email"], $row["Password"]);
+    mysqli_stmt_bind_param($stmt,"isss", $row["userID"] , $row["userName"], $row["email"], $row["Password"]);
+    mysqli_stmt_execute($stmt);
+
+    $sql = "INSERT INTO matchesPlayed(userID) VALUES(?)";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"i", $row["userID"]);
+    mysqli_stmt_execute($stmt);
+
+    $sql = "INSERT INTO playerScore(userID) VALUES(?)";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"i", $row["userID"]);
     mysqli_stmt_execute($stmt);
   }
 ?>
