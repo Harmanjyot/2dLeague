@@ -38,7 +38,7 @@ require "php/conn.php";
 </head>
 <body>
         <div class="container">
-                <form action="/action_page.php" method="POST">
+                <form action="misc/action_login.php" method="POST">
                   <h1>2D League</h1>
                   <div  id="grad">
                      
@@ -55,7 +55,7 @@ require "php/conn.php";
                           <a href="signupPage.php" style="color:white" class="btn">Sign up</a>
                         </div>
                         <div class="col">
-                          <a href="#" style="color:white" class="btn">Forgot password ?</a>
+                          <a href="pwdReset.php" style="color:white" class="btn">Forgot password ?</a>
                         </div>
                       </div>
                     </div>

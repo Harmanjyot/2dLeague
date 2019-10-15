@@ -1,12 +1,17 @@
 <?php 
 	require "php/conn.php";
-	$userID = mysqli_real_escape_string($_REQUEST["userID"])
+    session_start();
+	$userID = $_SESSION["playerID"];
 	$sql = "SELECT * FROM playerscore where userID = '$userID'";
 	$result = mysqli_query($conn, $sql);
 	$rowPlayer = mysqli_fetch_array($result);
 	$sql = "SELECT MAX(scoreTotal), userID, goals, saves, shots FROM playerscore";
 	$result = mysqli_query($conn, $sql);
 	$rowBestPlayer = mysqli_fetch_array($result);
+
+  $sql = "SELECT * FROM matchesPlayed where userID = '$userID'";
+  $result = mysqli_query($conn, $sql);
+  $rowPlayerMatches = mysqli_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -17,85 +22,96 @@
 	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
 	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 	<script type="text/javascript">
-		FusionCharts.ready(function(){
-			var chartObj = new FusionCharts({
-    type: 'radar',
-    renderAt: 'chart-container',
-    width: '600',
-    height: '350',
-    dataFormat: 'json',
-    dataSource: {
-        "chart": {
-            "caption": "Budget Analysis",
-            "subCaption": "Current month",
-            "numberPreffix": "$",
-            "theme": "fusion",
-            "radarfillcolor": "#ffffff"
+		const dataSource = {
+  chart: {
+    caption: "Skill Analysis",
+
+    showlegend: "0",
+    showdivlinevalues: "0",
+    showlimits: "0",
+    showvalues: "1",
+    plotfillalpha: "40",
+  },
+  categories: [
+    {
+      category: [
+        {
+          label: "Goals Scored"
         },
-        "categories": [{
-            "category": [{
-                "label": "Win/Loss Ratio"
-            }, {
-                "label": "Goals"
-            }, {
-                "label": "Goals Saved"
-            }, {
-                "label": "Shot on Goal"
-            }]
-        }],
-        "dataset": [{
-            "seriesname": "Your stats",
-            "data": [{
-                "value": "<?php $winsPlayer = $row["wins"]; $totalGames = $row["gamesPlayed"]; $ans = ($winsPlayer/$totalGames)*10; ?>"
-            }, {
-                "value": "16500"
-            }, {
-                "value": "14300"
-            }, {
-                "value": "10000"
-            }, {
-                "value": "9800"
-            }]
-        }, {
-            "seriesname": "World's best",
-            "data": [{
-                "value": "6000"
-            }, {
-                "value": "9500"
-            }, {
-                "value": "11900"
-            }, {
-                "value": "8000"
-            }, {
-                "value": "9700"
-            }]
-        }]
+        {
+          label: "Goals Saved"
+        },
+        {
+          label: "Shot on Goal"
+        },
+        {
+          label: "Matches Won"
+        }
+      ]
     }
-}
-);
-			chartObj.render();
-		});
+  ],
+  dataset: [
+    {
+      seriesname: "Ratings",
+      data: [
+        {
+          value: "<?php echo ($rowPlayer["goals"]/$rowPlayer["shots"])*10; ?>"
+        },
+        {
+          value: "<?php echo ($rowPlayer["saves"]/$rowPlayer["savesMissed"])*10; ?>"
+        },
+        {
+          value: "<?php echo ($rowPlayer["shots"]/$rowBestPlayer["shots"])*10; ?>"
+        },
+        {
+          value: "<?php echo ($rowPlayerMatches["matchesWon"]/$rowPlayerMatches["matchesPlayed"])*10; ?>"
+        }
+      ]
+    }
+  ]
+};
+
+FusionCharts.ready(function() {
+  var myChart = new FusionCharts({
+    type: "radar",
+    renderAt: "chart-container",
+    width: "60%",
+    height: "60%",
+    dataFormat: "json",
+    dataSource
+  }).render();
+});
+
 	</script>
 	<title> Statistics </title>
 </head>
 <body>
 	<div class="content_stats">
-		<div class="grassOverlay"></div>
-		<div id="chart-container" style="position: absolute; top: 20%;"></div>
+		<div class="grassOverlay" style="opacity: 1;">
+		<div id="chart-container"></div>
+    </div>
 		<div class="statTable" style="position: absolute; top: 20%; left: 60%;">
 			<?php 
-				$userID = htmlentities($_REQUEST["userID"]);
 				if ($userID > 0)
 				{
 				$sql = "SELECT * FROM playerscore where userID = '$userID' ";
          		$result  = mysqli_query($conn ,$sql);
          		$row = mysqli_fetch_array($result);
-         		echo "<b> Matches Played: " ; ?>
+         		echo "<b> Matches Played: " ; 
+            echo $rowPlayerMatches["matchesPlayed"];  
+            ?>
+            
          		<br>
          		<?php
          		echo "<br> Matches Won:       " ;
+            echo $rowPlayerMatches["matchesWon"];
          		?>
          		<br>
+            <?php
+            echo "<br> Matches Lost:       " ;
+            echo $rowPlayerMatches["matchesLost"];
+            ?>
+            <br>
          		<?php
          		echo "<br> Goals Scored:      " ;
          		echo $row['goals'];
