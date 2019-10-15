@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2019 at 07:01 PM
+-- Generation Time: Oct 15, 2019 at 10:11 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -25,6 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admindetails`
+--
+
+CREATE TABLE `admindetails` (
+  `userName` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admindetails`
+--
+
+INSERT INTO `admindetails` (`userName`, `Password`) VALUES
+('Admin', '$2y$10$ApkRpE.I4lIJp5gM4y5gt.8MBRMLdQC4O9s.u/jae0GD9yfyRnKT.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `matchesplayed`
 --
 
@@ -40,7 +58,7 @@ CREATE TABLE `matchesplayed` (
 --
 
 INSERT INTO `matchesplayed` (`userID`, `matchesWon`, `matchesLost`, `matchesPlayed`) VALUES
-(4, 3, 2, 5);
+(6, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -60,7 +78,7 @@ CREATE TABLE `playerdetails` (
 --
 
 INSERT INTO `playerdetails` (`userID`, `userName`, `emailID`, `Password`) VALUES
-(4, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$FUpS.wGer6uW8oymnjbdc.zu/.cQYi08.oIeJROHqaskccOHZ63Q6');
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS');
 
 -- --------------------------------------------------------
 
@@ -82,7 +100,7 @@ CREATE TABLE `playerscore` (
 --
 
 INSERT INTO `playerscore` (`userID`, `goals`, `saves`, `shots`, `savesMissed`, `scoreTotal`) VALUES
-(4, 5, 6, 10, 20, 10);
+(6, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -104,11 +122,17 @@ CREATE TABLE `verified` (
 --
 
 INSERT INTO `verified` (`userID`, `userName`, `email`, `Password`, `status`, `vkey`) VALUES
-(4, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$FUpS.wGer6uW8oymnjbdc.zu/.cQYi08.oIeJROHqaskccOHZ63Q6', 1, '863d05aaa88468554c2c3d2eafb0b40e');
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS', 1, '23fe37bd429e3a5e334931e1c78d0748');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admindetails`
+--
+ALTER TABLE `admindetails`
+  ADD UNIQUE KEY `Password` (`Password`);
 
 --
 -- Indexes for table `matchesplayed`
@@ -148,7 +172,7 @@ ALTER TABLE `verified`
 -- AUTO_INCREMENT for table `verified`
 --
 ALTER TABLE `verified`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
