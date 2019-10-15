@@ -20,7 +20,7 @@
                       <input type="text" name="email" placeholder="Email ID" required>
                       
                       <br>
-                      <centre><button type="submit" name="Login">Submit</button></centre>
+                      <centre><button type="submit" name="Login">SUBMIT</button></centre>
                       <br>
                       <br>
                       <div class="row">

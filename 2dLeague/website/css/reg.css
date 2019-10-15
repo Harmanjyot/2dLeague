@@ -37,7 +37,7 @@ a{
         margin: 10px;
         border-radius: 40px;
         height: 50%;
-        width: 35%;
+        width: 55%;
         align-content: center;
   }
 .row{
@@ -69,4 +69,40 @@ transition: background-color 200ms ease-in-out,
      background: rgb(248,255,69);
      background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
 
+}
+@media only screen and (min-width:480px)
+{
+h1{
+    width: 100%;
+    align-self: auto;
+}
+
+.container{
+    padding-top: 20px; 
+    padding:5% 60%;
+    height: 100vh;
+    width: 100%;
+    position: relative; 
+    margin:0 auto;
+    max-width:500px;
+    
+}
+}
+@media only screen and (max-width: 768px)
+{
+    h1{
+        width: 100%;
+        align-self: auto;
+    }
+    
+    .container{
+        padding-top: 20px; 
+        padding:5% 60%;
+        height: 100vh;
+        width: 100%;
+        position: relative; 
+        margin:0 auto;
+        max-width:500px;
+        
+    }
 }

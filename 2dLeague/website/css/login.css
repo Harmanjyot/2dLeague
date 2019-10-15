@@ -1,5 +1,6 @@
 body {
     background-image: url("../images/background.jpg");
+    overflow: -moz-hidden-unscrollable;
 }
 
 h2 {
@@ -13,7 +14,7 @@ h1{
     background: rgb(248,255,69);
 background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
     
-font-size: 72px;
+
   background: -webkit-linear-gradient(rgba(248,255,69,1) 0%,rgba(255,169,70,1) 43%,rgba(254,61,27,1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -39,7 +40,7 @@ a{
         margin: 10px;
         border-radius: 40px;
         height: 50%;
-        width: 35%;
+        width: 65%;
   }
 .row{
     text-align: center;
@@ -71,5 +72,55 @@ transition: background-color 200ms ease-in-out,
      background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
 
 }
-@media only screen and (min-width:700px) and (max-width:995px)
-{}
+@media only screen and (min-width:480px)
+{
+h1{
+    width: 100%;
+    align-self: auto;
+}
+
+.container{
+    padding-top: 20px; 
+    padding:5% 5%;
+    height: 100vh;
+    width: 100%;
+    position: relative; 
+    margin:0 auto;
+    max-width:500px;
+    
+}
+#grad {
+    background-color: rgba(255, 135, 79, 0.938);
+    padding: 8px 16px;
+    margin: 10px;
+    border-radius: 40px;
+    height: 50vh;
+    width: 65%;
+}
+}
+@media only screen and (max-width: 768px)
+{
+    h1{
+        width: 100%;
+        align-self: auto;
+    }
+    
+    .container{
+        padding-top: 20px; 
+        padding:5% 60%;
+        height: 100vh;
+        width: 100%;
+        position: relative; 
+        margin:0 auto;
+        max-width:500px;
+        
+    }
+    #grad {
+        background-color: rgba(255, 135, 79, 0.938);
+        padding: 8px 16px;
+        margin: 10px;
+        border-radius: 40px;
+        height: 50vh;
+        width: 65%;
+  }
+}
