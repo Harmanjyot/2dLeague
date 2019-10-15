@@ -16,14 +16,16 @@ if (mysqli_num_rows($result)>0) {
 else
 {
 	$vkey = md5(time().$name);
+	echo $name;
 	$to = $email;
     $subject = "2D League";
-	$message = "<a href = 'http://localhost/2dLeague/2dLeague/2dLeague/website/loginPage.php?vkey=$vkey>Register Account</a>";
+	$message = "<a href = 'http://localhost/2dLeague/2dLeague/website/loginPage.php?vkey=$vkey>Register Account</a>";
 	$headers = "From: 2dleagueofficial@gmail.com";
 	$headers .= "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
 
-    if( mail($email, $subject, $message, $headers) )
+
+    if( mail($to, $subject, $message, $headers) )
     {
     	$hashPass = password_hash($pass, PASSWORD_DEFAULT);
 		$sql = "INSERT INTO verified(userName, email, Password, status, vkey) VALUES(?,?,?, '0', ?)";
@@ -36,7 +38,9 @@ else
     }
     else
     {
-    	// header("Location: ../loginPage.php?error");
+
+    	header("Location: ../loginPage.php?error");
+
 
     }
 

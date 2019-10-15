@@ -1,3 +1,30 @@
+<?php 
+require "php/conn.php";
+  if (isset($_GET["vkey"])) {
+    $vky = mysqli_escape_string($conn, $_GET["vkey"]);
+
+    $sql = "UPDATE verified set status = '1' where vkey = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"s", $vky);
+    mysqli_stmt_execute($stmt);
+
+    $sql = "SELECT * from verified where vkey = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"s", $vky);
+    mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    $row = mysqli_fetch_array($result);
+
+    $sql = "INSERT INTO playerdetails(userName, emailID, Password) VALUES(?,?,?)";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"sss", $row["userName"], $row["email"], $row["Password"]);
+    mysqli_stmt_execute($stmt);
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,6 +1,6 @@
    <?php 
 $dname = "2dleague";
-$duser = "infantDrake";
-$dpass = "test123";
+$duser = "root";
+$dpass = "";
 $dhost = "localhost";
  ?>
