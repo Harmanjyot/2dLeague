@@ -23,8 +23,9 @@ function draw() {
     background('rgba(0,255,0, 0.25)');
 
     // background(0);
-    //ball.show();
+    ball.show();
     oct.show();
+    //console.log(oct.pos.x)
     //ball.touch();
     //oct.bounds();
     oct.update();

@@ -27,6 +27,8 @@ function Octane(x,y,r) {
       this.pos.y = height - 100;
     
     }
+    var showme = "wtf is this"
+    //var carVel = createVector(this.vel);
   }
 
   this.show = function() {
