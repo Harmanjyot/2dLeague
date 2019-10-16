@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) > 0) {
 	if (password_verify($pass, $dpass)) {
 		session_start();
 		$_SESSION["playerID"] = $row["userID"];
-		header("Location: ../stats.php");
+		header("Location: ../dash.php");
 	}
 
 }

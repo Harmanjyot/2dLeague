@@ -41,16 +41,15 @@ function Ball(x,y,r) {
     this.pos = createVector(x,y);
     this.r = r;
     this.vel = createVector(0,0);
-    this.newVel = createVector(0,0);
 
 
 
     this.update = function () {
-        if (this.pos != 0){
-            newVel.setMag(oct.update.carVel);
-        }
+
+      
+        
         if (this.pos.x < 0) {
-            this.pos.x = this.pos.x + (balldirectionx * ballspeed);
+            this.pos.x = this.pos.x * -1;
           }
       
           if (this.pos.y < 0) {
@@ -66,15 +65,26 @@ function Ball(x,y,r) {
             this.pos.y = height - 60;
           
           }
-        
+    }
+    this.bounceOff = function (other) {
+      var newVel = createVector(other.vel);
+      var d = p5.Vector.dist(this.pos, other.pos);
 
+      if (d < this.r + other.r){
+        //newVel.setMag(5);
+        newVel = oct.vel;
+        //while (this.vel > 0.5){
+        this.vel.lerp(newVel,0.3);
+        this.pos.add(this.vel);
+        //}
+      }
 
     }
     this.show = function() {
         fill(255);
         ellipse(this.pos.x, this.pos.y, this.r*2, this.r*2);
         //this is HOW YOU SHARE VARIABLES YOU BITCH
-        console.log(oct.pos.x)
+        //console.log(oct.pos)
     }
 
 }
