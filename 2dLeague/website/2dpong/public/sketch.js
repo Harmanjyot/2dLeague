@@ -7,6 +7,8 @@ var touch_p1 = 0;
 var touch_p2 = 0;
 var miss_p1 = 0;
 var miss_p2 = 0;
+var goal_p1 = 0;
+var goal_p2 = 0;
 
 function setup() {
     var cnv = createCanvas(1200,600);
@@ -56,7 +58,7 @@ function draw() {
 
     if (score_p2 >= 21){
         
-        var url = "http://localhost/2dLeague/2dLeague/website/winnerPage.php?p1Score=" + score_p1 + "&p2Score=" + score_p2 + "&p1Touch=" + touch_p1 + "&p2Touch=" + touch_p2 + "&p1Miss="+ miss_p1 + "&p2Miss=" + miss_p2 + "&p2Name=" + p2name;
+        var url = "http://localhost/2dLeague/2dLeague/website/winnerPage.php?p1Score=" + score_p1 + "&p2Score=" + score_p2 + "&p1Touch=" + touch_p1 + "&p2Touch=" + touch_p2 + "&p1Miss="+ miss_p1 + "&p2Miss=" + miss_p2 + "&p2Name=" + p2name + "&p1Goals=" + goal_p1 + "&p2Goals=" + goal_p2;
         window.location.assign(url);
         // paddie0.hide();
         // paddie1.hide();
@@ -69,7 +71,7 @@ function draw() {
 
     }
     if (score_p1 >= 21){
-        var url = "http://localhost/2dLeague/2dLeague/website/winnerPage.php?p1Score=" + score_p1 + "&p2Score=" + score_p2 + "&p1Touch=" + touch_p1 + "&p2Touch=" + touch_p2 + "&p1Miss="+ miss_p1 + "&p2Miss=" + miss_p2 + "&p2Name=" + p2name;
+        var url = "http://localhost/2dLeague/2dLeague/website/winnerPage.php?p1Score=" + score_p1 + "&p2Score=" + score_p2 + "&p1Touch=" + touch_p1 + "&p2Touch=" + touch_p2 + "&p1Miss="+ miss_p1 + "&p2Miss=" + miss_p2 + "&p2Name=" + p2name + "&p1Goals=" + goal_p1 + "&p2Goals=" + goal_p2;
         window.location.assign(url);
         // paddie0.hide();
         // paddie1.hide();

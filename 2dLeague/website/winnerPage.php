@@ -9,11 +9,25 @@ if (isset($_SESSION["playerID"])) {
 	$p1Miss = mysqli_escape_string($conn, $_GET["p1Miss"]);
 	$p2Miss = mysqli_escape_string($conn, $_GET["p2Miss"]);
 	$p2Name = mysqli_escape_string($conn, $_GET["p2Name"]);
+    $p1Goals = mysqli_escape_string($conn, $_GET["p1Goals"]);
+    $p2Goals = mysqli_escape_string($conn, $_GET["p2Goals"]);
 
-    $sql = "UPDATE playerScore SET saves = ?, savesMissed = ? where userID = ?";
+    $sql = "SELECT * FROM playerScore where userID = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"i", $_SESSION["playerID"]);
+    mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    $row = mysqli_fetch_array($result);
+    $p1Newtouch = $row["saves"] + $p1Touch;
+    $p1NewMiss = $row["savesMissed"] + $p1Miss;
+    $p1NewGoal = $row["goals"] + $p1Goals;
+    $p1NewScore = $p1Newtouch + $p1score + $p1NewGoal;
+
+    $sql = "UPDATE playerScore SET saves = ?, savesMissed = ?, goals = ?, scoreTotal = ? where userID = ?";
 	$stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt,"iii", $p1Touch, $p1Miss, $_SESSION["playerID"]);
+    mysqli_stmt_bind_param($stmt,"iiiii", $p1Newtouch, $p1NewMiss, $p1NewGoal, $p1NewScore , $_SESSION["playerID"]);
     mysqli_stmt_execute($stmt);
 
 
@@ -26,20 +40,26 @@ if (isset($_SESSION["playerID"])) {
     $row = mysqli_fetch_array($result);
     $p2ID = $row["userID"];
 
-    $sql = "UPDATE playerScore SET saves = ?, savesMissed = ? where userID = ?";
-	$stmt = mysqli_stmt_init($conn);
+    $sql = "SELECT * FROM playerScore where userID = ?";
+    $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt,"iii", $p1Touch, $p1Miss, $_SESSION["playerID"]);
+    mysqli_stmt_bind_param($stmt,"i", $p2ID);
     mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    $row = mysqli_fetch_array($result);
+    $p2Newtouch = $row["saves"] + $p2Touch;
+    $p2NewMiss = $row["savesMissed"] + $p2Miss;
+    $p2NewGoal = $row["goals"] + $p2Goals;
+    $p2NewScore = $p2Newtouch + $p2score + $p2NewGoal;
 
-    $sql = "UPDATE playerScore SET saves = ?, savesMissed = ? where userID = ?";
+    $sql = "UPDATE playerScore SET saves = ?, savesMissed = ?, goals = ?, scoreTotal = ? where userID = ?";
 	$stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt,"iii", $p2Touch, $p2Miss, $p2ID);
+    mysqli_stmt_bind_param($stmt,"iiiii", $p2Newtouch, $p2NewMiss, $p2NewGoal, $p2NewScore , $p2ID);
     mysqli_stmt_execute($stmt);
 
     if ($p1score > $p2score) {
-    	 $sql = "SELECT * FROM matchesPlayed where userID = ?";
+    	$sql = "SELECT * FROM matchesPlayed where userID = ?";
 		$stmt = mysqli_stmt_init($conn);
 	    mysqli_stmt_prepare($stmt, $sql);
 	    mysqli_stmt_bind_param($stmt,"i", $_SESSION["playerID"]);
