@@ -12,11 +12,17 @@ if(isset($_SESSION["adminType"]))
   <title>Dashboard</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="css/login.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/login.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+    <div style="float: right;">
+    <form method="POST" action="../misc/action_logout.php">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
         <div class="container">
           <h1>2D League</h1>
           <div class="table-responsive" style="background-color: white;">
