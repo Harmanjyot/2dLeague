@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2019 at 10:11 PM
+-- Generation Time: Oct 16, 2019 at 08:08 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -58,7 +58,8 @@ CREATE TABLE `matchesplayed` (
 --
 
 INSERT INTO `matchesplayed` (`userID`, `matchesWon`, `matchesLost`, `matchesPlayed`) VALUES
-(6, 0, 0, 0);
+(6, 0, 1, 5),
+(7, 5, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -78,7 +79,8 @@ CREATE TABLE `playerdetails` (
 --
 
 INSERT INTO `playerdetails` (`userID`, `userName`, `emailID`, `Password`) VALUES
-(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS');
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS'),
+(7, 'finch01', 'finchflinch01@gmail.com', '$2y$10$Ir.XlQjJj4cUmaKNoA/vc.ROfpJPFnkyyLTlQbCgnPPr.IWrRqqA.');
 
 -- --------------------------------------------------------
 
@@ -88,9 +90,8 @@ INSERT INTO `playerdetails` (`userID`, `userName`, `emailID`, `Password`) VALUES
 
 CREATE TABLE `playerscore` (
   `userID` int(11) NOT NULL,
-  `goals` int(11) NOT NULL,
   `saves` int(11) NOT NULL,
-  `shots` int(11) NOT NULL,
+  `goals` int(11) NOT NULL,
   `savesMissed` int(11) NOT NULL,
   `scoreTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -99,8 +100,9 @@ CREATE TABLE `playerscore` (
 -- Dumping data for table `playerscore`
 --
 
-INSERT INTO `playerscore` (`userID`, `goals`, `saves`, `shots`, `savesMissed`, `scoreTotal`) VALUES
-(6, 0, 0, 0, 0, 0);
+INSERT INTO `playerscore` (`userID`, `saves`, `goals`, `savesMissed`, `scoreTotal`) VALUES
+(6, 38, 38, 284, 82),
+(7, 54, 40, 42, 119);
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,8 @@ CREATE TABLE `verified` (
 --
 
 INSERT INTO `verified` (`userID`, `userName`, `email`, `Password`, `status`, `vkey`) VALUES
-(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS', 1, '23fe37bd429e3a5e334931e1c78d0748');
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS', 1, '23fe37bd429e3a5e334931e1c78d0748'),
+(7, 'finch01', 'finchflinch01@gmail.com', '$2y$10$Ir.XlQjJj4cUmaKNoA/vc.ROfpJPFnkyyLTlQbCgnPPr.IWrRqqA.', 1, '907f23aa3b068e6bd1f9639cdf2be24e');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +175,7 @@ ALTER TABLE `verified`
 -- AUTO_INCREMENT for table `verified`
 --
 ALTER TABLE `verified`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
