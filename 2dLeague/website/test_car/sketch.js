@@ -24,13 +24,14 @@ function draw() {
 
     // background(0);
     ball.show();
+    ball.bounceOff(oct);
     oct.show();
     //console.log(oct.pos.x)
     //ball.touch();
     //oct.bounds();
     oct.update();
     
-    //ball.update();
+    ball.update();
 
     // oct2.show();
     // oct2.update();
