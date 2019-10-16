@@ -1,0 +1,80 @@
+body {
+    background-image: url("../images/background.jpg");
+    overflow: -moz-hidden-unscrollable;
+}
+#title{
+    width: 100%;
+    height: fit-content;
+    background-color: -webkit-linear-gradient(rgba(248,255,69,1) 0%,rgba(255,169,70,1) 43%,rgba(254,61,27,1) 100%);
+
+}
+#bod{
+    width: 100%;
+    height: 40%;
+    
+
+}
+h1{
+    
+    font-family: "sheeping cats";
+    font-stretch: condensed;
+    background: rgb(248,255,69);
+background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
+    
+
+  background: -webkit-linear-gradient(rgba(248,255,69,1) 0%,rgba(255,169,70,1) 43%,rgba(254,61,27,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 200%;
+  float: left;
+}
+/* #bar{
+    font-family: "sheeping cats";
+    font-stretch: condensed;
+    margin-top: 10px;
+    background:  -webkit-linear-gradient(rgba(248,255,69,1) 0%,rgba(255,169,70,1) 43%,rgba(254,61,27,1) 100%);
+    webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    height: 50px;
+} */
+button{
+     margin-top: 21.44px;
+    font-size: large;
+    font-family: "sheeping cats", 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: right;
+    border-radius: 5px;
+    background: rgb(248,255,69);
+background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
+transition: background-color 200ms ease-in-out,
+          box-shadow 100ms ease-out,
+     
+}
+#buton{
+    align-items: center;
+}
+#play{
+   font-size: large;
+   font-family: "sheeping cats", 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   float: right;
+   border-radius: 5px;
+   background: rgb(248,255,69);
+background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
+transition: background-color 200ms ease-in-out,
+         box-shadow 100ms ease-out,
+    
+}
+#play :hover {
+    box-shadow: 5px 5px 10px grey;
+   cursor: pointer;
+   background: rgb(248,255,69);
+   background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
+   
+}
+
+button :hover {
+    box-shadow: 5px 5px 10px grey;
+   cursor: pointer;
+   background: rgb(248,255,69);
+   background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
+   
+}
