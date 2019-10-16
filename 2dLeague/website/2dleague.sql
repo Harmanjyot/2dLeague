@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2019 at 12:53 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Oct 15, 2019 at 10:11 PM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admindetails`
+--
+
+CREATE TABLE `admindetails` (
+  `userName` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admindetails`
+--
+
+INSERT INTO `admindetails` (`userName`, `Password`) VALUES
+('Admin', '$2y$10$ApkRpE.I4lIJp5gM4y5gt.8MBRMLdQC4O9s.u/jae0GD9yfyRnKT.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `matchesplayed`
 --
 
@@ -34,6 +52,13 @@ CREATE TABLE `matchesplayed` (
   `matchesLost` int(11) NOT NULL,
   `matchesPlayed` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `matchesplayed`
+--
+
+INSERT INTO `matchesplayed` (`userID`, `matchesWon`, `matchesLost`, `matchesPlayed`) VALUES
+(6, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -48,6 +73,13 @@ CREATE TABLE `playerdetails` (
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `playerdetails`
+--
+
+INSERT INTO `playerdetails` (`userID`, `userName`, `emailID`, `Password`) VALUES
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS');
+
 -- --------------------------------------------------------
 
 --
@@ -59,12 +91,48 @@ CREATE TABLE `playerscore` (
   `goals` int(11) NOT NULL,
   `saves` int(11) NOT NULL,
   `shots` int(11) NOT NULL,
+  `savesMissed` int(11) NOT NULL,
   `scoreTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `playerscore`
+--
+
+INSERT INTO `playerscore` (`userID`, `goals`, `saves`, `shots`, `savesMissed`, `scoreTotal`) VALUES
+(6, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verified`
+--
+
+CREATE TABLE `verified` (
+  `userID` int(11) NOT NULL,
+  `userName` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `vkey` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `verified`
+--
+
+INSERT INTO `verified` (`userID`, `userName`, `email`, `Password`, `status`, `vkey`) VALUES
+(6, 'infant_Drake', 'harmanrayat@gmail.com', '$2y$10$7nZ8dVY6PG1iRnZHKPmtQeoHNL1CJ/JqJfU7QWRbi0eP3TwgmusiS', 1, '23fe37bd429e3a5e334931e1c78d0748');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admindetails`
+--
+ALTER TABLE `admindetails`
+  ADD UNIQUE KEY `Password` (`Password`);
 
 --
 -- Indexes for table `matchesplayed`
@@ -88,14 +156,45 @@ ALTER TABLE `playerscore`
   ADD PRIMARY KEY (`userID`);
 
 --
+-- Indexes for table `verified`
+--
+ALTER TABLE `verified`
+  ADD PRIMARY KEY (`userID`),
+  ADD UNIQUE KEY `userName` (`userName`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `vkey` (`vkey`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `playerdetails`
+-- AUTO_INCREMENT for table `verified`
+--
+ALTER TABLE `verified`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `matchesplayed`
+--
+ALTER TABLE `matchesplayed`
+  ADD CONSTRAINT `matchesplayed_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `verified` (`userID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `playerdetails`
 --
 ALTER TABLE `playerdetails`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+  ADD CONSTRAINT `playerdetails_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `verified` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `playerscore`
+--
+ALTER TABLE `playerscore`
+  ADD CONSTRAINT `playerscore_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `verified` (`userID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

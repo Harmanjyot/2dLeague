@@ -1,10 +1,10 @@
-<?php 
+<?php
 require "../php/conn.php";
-
-$name = mysqli_escape_string($conn, $_POST["username"]);
+$name = mysqli_escape_string($conn, $_POST["name"]);
 $pass = mysqli_escape_string($conn, $_POST["password"]);
 
-$sql = $sql = "SELECT * from playerDetails where userName = ?";
+
+$sql = $sql = "SELECT * from adminDetails where userName = ?";
 $stmt = mysqli_stmt_init($conn);
 mysqli_stmt_prepare($stmt, $sql);
 mysqli_stmt_bind_param($stmt,"s", $name);
@@ -15,15 +15,17 @@ if (mysqli_num_rows($result) > 0) {
 	$dpass = $row["Password"];
 	if (password_verify($pass, $dpass)) {
 		session_start();
-		$_SESSION["playerID"] = $row["userID"];
-		header("Location: ../stats.php");
+		$_SESSION["adminType"] = $row["userName"];
+		header("Location: dashboard.php");
 	}
-
-}
-else
+	else
 	{
 		header("Location: ../loginPage.php");
 	}
-
+}
+else
+{
+	header("Location: ../loginPage.php");
+}
 
 ?>

@@ -22,7 +22,7 @@ background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%
 }
 
 .container{
-    padding-top: 20px; 
+    padding-top: 10px; 
     padding:60px 400px;
     position: relative; 
     margin:0 auto;
@@ -37,7 +37,7 @@ a{
 #grad {
         background-color: rgba(255, 135, 79, 0.938);
         padding: 8px 16px;
-        margin: 10px;
+        margin: auto;
         border-radius: 40px;
         height: 50%;
         width: 65%;
@@ -72,7 +72,7 @@ transition: background-color 200ms ease-in-out,
      background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
 
 }
-@media only screen and (min-width:480px)
+@media only screen and (min-width:280px)
 {
 h1{
     width: 100%;
@@ -82,7 +82,7 @@ h1{
 .container{
     padding-top: 20px; 
     padding:5% 5%;
-    height: 100vh;
+    height: 40vh;
     width: 100%;
     position: relative; 
     margin:0 auto;
@@ -92,13 +92,13 @@ h1{
 #grad {
     background-color: rgba(255, 135, 79, 0.938);
     padding: 8px 16px;
-    margin: 10px;
+    margin: auto;
     border-radius: 40px;
-    height: 50vh;
+    height: auto;
     width: 65%;
 }
 }
-@media only screen and (max-width: 768px)
+/* @media only screen and (max-width: 768px)
 {
     h1{
         width: 100%;
@@ -120,7 +120,7 @@ h1{
         padding: 8px 16px;
         margin: 10px;
         border-radius: 40px;
-        height: 50vh;
+        height: auto;
         width: 65%;
   }
-}
+} */

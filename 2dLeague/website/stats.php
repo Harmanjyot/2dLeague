@@ -18,6 +18,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/stats.css">
+  <link rel="stylesheet" href="css/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
 	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
@@ -58,7 +59,7 @@
           value: "<?php echo ($rowPlayer["goals"]/$rowPlayer["shots"])*10; ?>"
         },
         {
-          value: "<?php echo ($rowPlayer["saves"]/$rowPlayer["savesMissed"])*10; ?>"
+          value: "<?php echo ($rowPlayer["saves"]/($rowPlayer["savesMissed"]+$rowPlayer["saves"]))*10; ?>"
         },
         {
           value: "<?php echo ($rowPlayer["shots"]/$rowBestPlayer["shots"])*10; ?>"
@@ -76,7 +77,7 @@ FusionCharts.ready(function() {
     type: "radar",
     renderAt: "chart-container",
     width: "60%",
-    height: "60%",
+    height: "130%",
     dataFormat: "json",
     dataSource
   }).render();
@@ -86,11 +87,17 @@ FusionCharts.ready(function() {
 	<title> Statistics </title>
 </head>
 <body>
+  <div style="float: right;">
+    <form method="POST" action="misc/action_logout.php">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+  
 	<div class="content_stats">
 		<div class="grassOverlay" style="opacity: 1;">
-		<div id="chart-container"></div>
+		<div id="chart-container" class="charts"></div>
     </div>
-		<div class="statTable" style="position: absolute; top: 20%; left: 60%;">
+		<div class="statTable">
 			<?php 
 				if ($userID > 0)
 				{

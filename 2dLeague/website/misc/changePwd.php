@@ -55,14 +55,14 @@ $vky = mysqli_escape_string($conn, $_GET["vkey"]);
 
     var newPwd = $('#newPass').val();
     var vky = "<?php echo $vky ?>" ;
-
+    var notice = "Password has been changed";
     $.ajax({
            type: "POST",
            url: "action_changePwd.php",
            data: {newPwd:newPwd, vky:vky},
            success: function(data)
            {
-               alert(data);
+               alert(notice);
            }
          });
 
