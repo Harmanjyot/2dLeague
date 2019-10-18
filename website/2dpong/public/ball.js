@@ -40,16 +40,16 @@ function Ball(x,y,r) {
             if (this.pos.y < windowWidth/2){
                 xBallChange *= -1;
                 yBallChange *= 1;
-                score_p1++;
+                //score_p1++;
                 touch_p1++;
-                goal_p1++;
+                //goal_p1++;
                 }
             else {
                 xBallChange *= -1;
                 yBallChange *= -1;
-                score_p1++;
+                //score_p1++;
                 touch_p1++;
-                goal_p1++;
+                //goal_p1++;
                 }
 
             }
@@ -60,16 +60,16 @@ function Ball(x,y,r) {
                 if (this.pos.y < windowWidth/2){
                     xBallChange *= -1;
                     yBallChange *= -1;
-                    score_p2++;
+                    //score_p2++;
                     touch_p2++;
-                    goal_p2++;
+                    //goal_p2++;
                     }
                 else {
                     xBallChange *= -1;
                     yBallChange *= 1;
-                    score_p2++;
+                    //score_p2++;
                     touch_p2++;
-                    goal_p2++;
+                    //goal_p2++;
                     }
     
                 }
