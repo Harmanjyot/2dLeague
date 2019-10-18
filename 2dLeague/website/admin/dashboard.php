@@ -1,8 +1,8 @@
 <?php
-require "../php/conn.php";
-session_start();
-if(isset($_SESSION["adminType"]))
-{
+// require "../php/conn.php";
+// session_start();
+// if(isset($_SESSION["adminType"]))
+// {
 
 ?>
 
@@ -72,8 +72,8 @@ if(isset($_SESSION["adminType"]))
 </html>
 
 <?php
-}
-else{
-  echo "PAGE DOES NOT EXIST!";
-}
+// }
+// else{
+//   echo "PAGE DOES NOT EXIST!";
+// }
 ?>
