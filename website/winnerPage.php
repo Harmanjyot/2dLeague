@@ -76,6 +76,14 @@ if (isset($_SESSION["playerID"])) {
 	    mysqli_stmt_bind_param($stmt,"iii", $newMatchWon, $newMatchPlayed , $_SESSION["playerID"]);
 	    mysqli_stmt_execute($stmt);
 
+        $sql = "SELECT * FROM matchesPlayed where userID = ?";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_stmt_prepare($stmt, $sql);
+        mysqli_stmt_bind_param($stmt,"i", $p2ID);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_array($result);
+
 
 	    $newMatchLost = $row["matchesLost"] + 1;
 	    $newMatchPlayed = $row["matchesPlayed"] + 1;
@@ -87,13 +95,15 @@ if (isset($_SESSION["playerID"])) {
     }
     else
     {
-    	$sql = "SELECT * FROM matchesPlayed where userID = ?";
-		$stmt = mysqli_stmt_init($conn);
-	    mysqli_stmt_prepare($stmt, $sql);
-	    mysqli_stmt_bind_param($stmt,"i", $_SESSION["playerID"]);
-	    mysqli_stmt_execute($stmt);
-	    $result = $stmt->get_result();
-	    $row = mysqli_fetch_array($result);
+        $sql = "SELECT * FROM matchesPlayed where userID = ?";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_stmt_prepare($stmt, $sql);
+        mysqli_stmt_bind_param($stmt,"i", $p2ID);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_array($result);
+
+
 
 	    $newMatchWon = $row["matchesWon"] + 1;
 	    $newMatchPlayed = $row["matchesPlayed"] + 1;
@@ -103,9 +113,19 @@ if (isset($_SESSION["playerID"])) {
 	    mysqli_stmt_bind_param($stmt,"iii", $newMatchWon, $newMatchPlayed, $p2ID);
 	    mysqli_stmt_execute($stmt);
 
+
+        $sql = "SELECT * FROM matchesPlayed where userID = ?";
+        $stmt = mysqli_stmt_init($conn);
+        mysqli_stmt_prepare($stmt, $sql);
+        mysqli_stmt_bind_param($stmt,"i", $_SESSION["playerID"]);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_array($result);
+
+
 	    $newMatchLost = $row["matchesLost"] + 1;
 	    $newMatchPlayed = $row["matchesPlayed"] + 1;
-	    $sql = "UPDATE matchesPlayed SET matchesLost = ?, matcheslayed = ? where userID = ?";
+	    $sql = "UPDATE matchesPlayed SET matchesLost = ?, matchesplayed = ? where userID = ?";
 		$stmt = mysqli_stmt_init($conn);
 	    mysqli_stmt_prepare($stmt, $sql);
 	    mysqli_stmt_bind_param($stmt,"iii", $newMatchLost, $newMatchPlayed, $_SESSION["playerID"]);
