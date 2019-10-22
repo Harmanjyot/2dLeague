@@ -1,7 +1,7 @@
 <?php
- require "php/conn.php";
- session_start(); 
- if (isset($_SESSION["playerID"])) {
+//  require "php/conn.php";
+//  session_start(); 
+//  if (isset($_SESSION["playerID"])) {
 
 ?>
 <!DOCTYPE html>
@@ -51,5 +51,5 @@
     </body>
 </html>
 <?php
-}
+// }
 ?>
