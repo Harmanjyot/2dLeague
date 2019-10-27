@@ -25,7 +25,7 @@ if (isset($_SESSION["playerID"])) {
     $p1NewScore = $p1Newtouch + $p1score + $p1NewGoal;
 
     $sql = "UPDATE playerScore SET saves = ?, savesMissed = ?, goals = ?, scoreTotal = ? where userID = ?";
-	$stmt = mysqli_stmt_init($conn);
+	  $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt,"iiiii", $p1Newtouch, $p1NewMiss, $p1NewGoal, $p1NewScore , $_SESSION["playerID"]);
     mysqli_stmt_execute($stmt);
