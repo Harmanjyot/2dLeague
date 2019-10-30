@@ -24,17 +24,17 @@ if(isset($_SESSION["playerID"]))
 <html>
 <head>
   <meta charset="UTF-8">
-  
+  <title>2D League</title>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script> -->
   <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-  <script type="text/javascript">
+  <script id="p2" type="text/javascript">
   var p2name = "<?php echo $player2Name ?>";
   </script>
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
   <script language="javascript" type="text/javascript" src="paddle.js"></script>
   <script language="javascript" type="text/javascript" src="ball.js"></script>
-  <link rel='stylesheet' type='text/css' media='screen' href='css/gamepage.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='gamepage.css'>
 </head>
 
 <body>
