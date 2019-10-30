@@ -6,8 +6,8 @@ body {
     width: 100%;
     height: fit-content;
     padding: 1%;
-    display: block;
     position: static;
+    display: inline-block;
     
 
 }
@@ -91,7 +91,7 @@ h1{
     margin: 0;
     font-family: "sheeping cats";
     font-stretch: condensed;
-    width: 20%;
+    display: inline-block;
     background: rgb(248,255,69);
 background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
     
@@ -102,7 +102,7 @@ background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%
   font-size: 200%;
   vertical-align: center;
 
-  display: inline-block;
+  
 }
 #bar{
     font-family: "sheeping cats";
