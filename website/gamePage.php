@@ -4,13 +4,10 @@
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
-	body {
-		background-image: url("../images/background.jpg");
-        overflow: -moz-hidden-unscrollable;
-	}
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
-    </style>
+	</style>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/gamepage.css'>
 </head>
 <body>
 
