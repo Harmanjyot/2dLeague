@@ -16,6 +16,7 @@ body {
 
 }
 .statTable {
+	width: 200px;
 	color: white;
 	font-size: 25px;
 	position: relative;

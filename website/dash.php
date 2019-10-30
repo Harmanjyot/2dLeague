@@ -25,17 +25,18 @@
     <div id="title">
      <div id="overlay" onclick="off()">
      </div>
-        <h1>2D League</h1> 
-        <form method="POST" action="misc/action_logout.php">
-        <button id="logout" type="submit" name="logout">LOGOUT</button>
-        </form>
-        <form method="POST" action="stats.php">
-        <button id="stats" type="submit" name="logout">STATS</button> 
-        </form>
-        <button onclick="on()" id="help" name="logout">HELP</button>
+            <h1>2D League</h1> 
+            <form method="POST" action="misc/action_logout.php">
+            <button id="logout" type="submit" name="logout">LOGOUT</button>
+            </form>
+            <form method="POST" action="stats.php">
+            <button id="stats" type="submit" name="logout">STATS</button> 
+            </form>
+            <button onclick="on()" id="help" name="logout">HELP</button>
         
     </div>
     
+    <br><br>
     <div id="grad">
         <div id="buton">
             <h2>Hi! <?php echo $row["userName"]; ?></h2>

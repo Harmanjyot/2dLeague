@@ -94,10 +94,12 @@ FusionCharts.ready(function() {
 </head>
 <body>
 
-  <div style="float: right;">
+  <div style="float: right; margin-right: 10px;">
+    <br>
     <form method="POST" action="dash.php">
         <button id="logout" type="submit" name="logout">Dash</button>
     </form>
+    <br>
     <form method="POST" action="misc/action_logout.php">
       <button type="submit">Logout</button>
     </form>

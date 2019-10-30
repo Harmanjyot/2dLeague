@@ -34,7 +34,7 @@ if(isset($_SESSION["playerID"]))
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
   <script language="javascript" type="text/javascript" src="paddle.js"></script>
   <script language="javascript" type="text/javascript" src="ball.js"></script>
-  
+  <link rel='stylesheet' type='text/css' media='screen' href='css/gamepage.css'>
 </head>
 
 <body>

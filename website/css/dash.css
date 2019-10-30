@@ -1,13 +1,12 @@
 body {
     background-image: url("../images/background.jpg");
     overflow: -moz-hidden-unscrollable;
+    position: relative;
 }
 #title{
     width: 100%;
-    height: fit-content;
-    padding: 1%;
-    position: static;
-    display: inline-block;
+    display: inline-flex;
+    
     
 
 }
@@ -47,7 +46,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    z-index: -1;
+    
     padding: 8px 16px;
     margin: auto;
 
@@ -86,11 +85,12 @@ h2{
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
 }
-h1{
-    margin: 0;
+h1{ 
+    width: 100%;
+    margin-top: 10px;
     font-family: "sheeping cats";
-    font-stretch: condensed;
-    display: inline-block;
+    
+    
     background: rgb(248,255,69);
 background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
     
@@ -99,8 +99,8 @@ background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 200%;
-  vertical-align: center;
-
+  
+  display: inline-block;
   
 }
 #bar{
@@ -118,6 +118,7 @@ input[type=text],input[type=password] {
     margin: 8px 0;
     box-sizing: border-box;
     border-radius: 8px;
+    z-index: 2;
   }
 
 button{
