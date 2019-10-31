@@ -63,6 +63,12 @@ function Ball(x,y,r) {
 
         if (this.pos.x <25 ){
             score_p2=score_p2+3;
+<<<<<<< HEAD
+=======
+            console.log(miss_p1++);
+            goal_p2 = goal_p2 +1;
+            console.log(goal_p2 = goal_p2 +1);
+>>>>>>> parent of 3c7c2e3... wot
             //delayTime(3000);
             this.pos.x = Math.floor(Math.random() * 500) + 50;
             this.pos.y = 50;
@@ -71,6 +77,12 @@ function Ball(x,y,r) {
 
         if (this.pos.x > 1150){
             score_p1 = score_p1 +3 ;
+<<<<<<< HEAD
+=======
+            console.log(miss_p2++);
+            console.log(goal_p1 = goal_p1 + 1);
+            console.log(goal_p1);
+>>>>>>> parent of 3c7c2e3... wot
             //delayTime(3000);
             this.pos.x = Math.floor(Math.random() * 500) + 50;
             this.pos.y = 50;

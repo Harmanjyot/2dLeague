@@ -9,7 +9,6 @@ var miss_p1 = 0;
 var miss_p2 = 0;
 var goal_p1 = 0;
 var goal_p2 = 0;
-console.log(pixelDensity());
 
 function setup() {
     var cnv = createCanvas(1200,600);
@@ -19,7 +18,7 @@ function setup() {
     //socket = io.connect('http://localhost:3000');
     paddie0 = new Paddle(75,300,50);
     paddie1 = new Paddle(1100,300,50);
-    console.log(pixelDensity());
+
     ball = new Ball(600,300,50);
 
 }
