@@ -9,9 +9,11 @@ var miss_p1 = 0;
 var miss_p2 = 0;
 var goal_p1 = 0;
 var goal_p2 = 0;
+console.log(pixelDensity());
 
 function setup() {
     var cnv = createCanvas(1200,600);
+    console.log(pixelDensity());
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
     cnv.position(x, y);
