@@ -1,0 +1,64 @@
+body {
+    background-image: url("../images/background.jpg");
+    overflow: -moz-hidden-unscrollable;
+    color: white;
+}
+p{
+    font-family: Courier, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2{
+    font-family: Courier, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    
+    display: inline-block;
+}
+#title{
+
+      width: 50%;
+      height:30%;
+      padding: 20px 20px 20px 20px;
+      margin-top: 10%;
+      margin-right:auto;
+      margin-bottom:0;
+      margin-left:auto;
+      background-color:rgb(255, 102, 0) ;
+      border-radius: 10px;
+      overflow-wrap: break-word;
+}
+#outer{
+    width: 100%;
+    display: inline-block;
+}
+img{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+}
+
+
+
+button{
+    font-size: large;
+    font-family: "sheeping cats", 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+    float: right;
+    margin-top:10px; 
+    margin-right:10px;
+    background: rgb(248,255,69);
+background: linear-gradient(90deg, rgba(248,255,69,1) 0%, rgba(255,169,70,1) 43%, rgba(254,61,27,1) 100%);
+transition: background-color 200ms ease-in-out,
+          box-shadow 100ms ease-out,
+          
+}
+
+button:hover {
+    box-shadow: 5px 5px 10px grey;
+   cursor: pointer;
+   background: rgb(248,255,69);
+   background-color: linear-gradient(90deg, rgba(254,61,27,1) 0%,rgba(255,169,70,1) 43%,rgba(248,255,69,1) 100%);  
+
+}
