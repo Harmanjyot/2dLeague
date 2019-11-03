@@ -39,6 +39,15 @@ if(isset($_SESSION["playerID"]))
 
 <body>
 
+<script>
+    if (window.screen.width !== 1536 && window.screen.height !== 864) {
+      console.log("res dont match, so game wont load");
+      window.location.replace("errorres.php");
+
+    }
+    
+  </script>
+
 
   
 </body>
