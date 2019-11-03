@@ -23,7 +23,7 @@
     </form>
     </div>
   <div id="title"> 
-  <img src="../website/images/040.png"><br><h2>Resolution Error</h2>
+  <img src="images/040.png"><br><h2>Resolution Error</h2>
   <p>The device which you are using does not meet the required resolution for displaying this Webpage.</p>
   </div>
   
